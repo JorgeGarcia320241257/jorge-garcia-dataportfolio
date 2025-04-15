@@ -22,7 +22,14 @@
 
 ➡️ [Ver certificaciones](./certificados)
 
----
+---- 📄 [Excel Avanzado](https://github.com/JorgeGarcia320241257/jorge-garcia-dataportfolio/blob/main/certificados/excel_avanzado.pdf)
+- 📄 [Excel Básico Intermedio](https://github.com/JorgeGarcia320241257/jorge-garcia-dataportfolio/blob/main/certificados/excel_basico_intermedio.pdf)
+- 📄 [Foundations of Probability in R](https://github.com/JorgeGarcia320241257/jorge-garcia-dataportfolio/blob/main/certificados/foundations_of_probability_r.pdf)
+- 📄 [Introduction to R](https://github.com/JorgeGarcia320241257/jorge-garcia-dataportfolio/blob/main/certificados/introduction_to_r.pdf)
+- 📄 [Introduction to Python](https://github.com/JorgeGarcia320241257/jorge-garcia-dataportfolio/blob/main/certificados/introduction_to_python.pdf)
+- 📄 [Introduction to SQL](https://github.com/JorgeGarcia320241257/jorge-garcia-dataportfolio/blob/main/certificados/introduction_to_sql.pdf)
+- 📄 [Tecnologías Emergentes](https://github.com/JorgeGarcia320241257/jorge-garcia-dataportfolio/blob/main/certificados/tecnologias_emergentes.pdf)
+
 
 ## 🔧 Tecnologías que manejo
 
