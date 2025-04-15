@@ -32,9 +32,9 @@
 
 Haz clic sobre el nombre del archivo para verlo:
 
-- 📄 [Excel_Avanzado.pdf](./Excel_Avanzado.pdf)  
+- 📄 [Excel_Avanzado.pdf](./🎓certificaciones/EXCEL BASICO A INTERMEDIO.pdf)  
 - 📄 [Excel_Básico_Intermedio.pdf](./Excel_Básico_Intermedio.pdf)  
-- 📄 [Foundations_of_Probability_R.pdf](./Foundations_of_Probability_R.pdf)  
+- 📄 [Foundations_of_Probability_R.pdf](./Foundations_of_Probability_R.pdf)
 - 📄 [Introduction_to_R.pdf](./Introduction_to_R.pdf)  
 - 📄 [Introduction_to_Python.pdf](./Introduction_to_Python.pdf)  
 - 📄 [Introduction_to_SQL.pdf](./Introduction_to_SQL.pdf)  
