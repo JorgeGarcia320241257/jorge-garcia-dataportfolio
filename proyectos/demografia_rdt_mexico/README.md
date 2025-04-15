@@ -1,4 +1,4 @@
-# 📊 Análisis de la Relación de Dependencia Total (RDT) en México (1950–2070)
+# 📊 Análisis de la Relación de Dependencia Total (RDT) en México (1950–2070) 
 
 Estudio demográfico usando R sobre la evolución histórica y proyección futura de la relación de dependencia total (jóvenes + adultos mayores sobre población en edad laboral) en México y sus estados.
 
