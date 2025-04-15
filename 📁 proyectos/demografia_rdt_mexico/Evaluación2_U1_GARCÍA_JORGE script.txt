@@ -1,0 +1,72 @@
+#**************************************************************************************#
+#**************************************************************************************#
+#
+#                                      Demografía
+#                               Manejo de R en Demografía
+#                               Licenciatura en Actuaría
+#                                 VI semestre, 2025-2 
+#                        Capítulo 1. Conceptos básicos y medidas
+#10. Con la tabla de la “Población a inicio de año, 1950-2070” del CONAPO, que analizamos la primera semana:
+#     
+#
+#**************************************************************************************#
+#**************************************************************************************#
+
+# Preámbulo ----
+
+## 1. Limpiar la memoria ----
+rm(list = ls())
+
+## 2. Instalación de paquetes (si es necesario) ----
+# install.packages("data.table", dependencies = T)
+# install.packages("ggplot2")
+
+## 3. Carga de paquetes ----
+library(data.table)
+library(ggplot2)
+
+# 4. Carga de datos ----
+url <- "https://conapo.segob.gob.mx/work/models/CONAPO/Datos_Abiertos/pry23/00_Pob_Inicio_1950_2070.csv"
+pop <- fread(url)
+
+# 5. Formateo de nombres de columnas ----
+pop <- fread(url, encoding = "Latin-1")  # Otra opción: encoding = "UTF-8"
+names(pop) <- tolower(names(pop)) # Convertir nombres a minúsculas para evitar errores
+colnames(pop) # Verificar nombres de columnas
+
+# 6. Cálculo de la Relación de Dependencia Total (RDT) ----
+
+## Agrupación de edades para el cálculo de la RDT
+pop[, age_group := fifelse(edad < 15, "Menor15",
+                           fifelse(edad >= 15 & edad <= 59, "Entre15y59",
+                                   "Mayor60"))]
+
+## Sumar población por año, entidad y grupo de edad
+pop_summary <- pop[, .(poblacion = sum(poblacion)), by = .(entidad, año, age_group)]
+
+## Reformatear los datos para calcular la RDT
+pop_wide <- dcast(pop_summary, entidad + año ~ age_group, value.var = "poblacion")
+
+## Aplicar la fórmula de la RDT
+pop_wide[, RDT := ((Menor15 + Mayor60) / Entre15y59) * 100]
+
+# 7. Gráfica de la RDT a nivel nacional ----
+pop_nac <- pop_wide[entidad == "República Mexicana"]
+
+ggplot(data=pop_nac, aes(x=año, y=RDT)) +
+  geom_line(color="blue") + geom_point(color="red") +
+  labs(title="Relación de Dependencia Total en México (1950-2070)",
+       x="Año", y="RDT (%)") +
+  theme_minimal() +
+  geom_vline(xintercept=2025, linetype='dashed', color='red', size=0.5, alpha=0.7)
+
+# 8. Gráficas de la RDT por entidad federativa ----
+pop_est <- pop_wide[entidad != "República Mexicana"]
+
+ggplot(data=pop_est, aes(x=año, y=RDT)) +
+  geom_line() + geom_point() +
+  labs(title="Relación de Dependencia Total por Entidad Federativa (1950-2070)",
+       x="Año", y="RDT (%)") +
+  theme_minimal() +
+  geom_vline(xintercept=2025, linetype='dashed', color='red', size=0.5, alpha=0.7) +
+  facet_wrap(~entidad)
