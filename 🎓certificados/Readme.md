@@ -41,6 +41,8 @@ Haz clic sobre el nombre del archivo para verlo:
 * 📄 [introduction\_to\_python.pdf](./introduction_to_python.pdf)
 * 📄 [introduction\_to\_sql.pdf](./introduction_to_sql.pdf)
 * 📄 [tecnologias\_emergentes.pdf](./tecnologias_emergentes.pdf)
+* 📄 [Power\_BI\_Introduccion.pdf](./Power\_BI\_Introduccion.pdf)
+
 
 
 📫 *Para dudas o validación, puedes contactarme vía correo o LinkedIn desde el [README principal del portafolio](../README.md).*
